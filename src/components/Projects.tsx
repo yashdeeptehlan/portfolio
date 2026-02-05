@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Calendar, ExternalLink } from 'lucide-react';
 import { projects } from '../data/portfolio';
 
 const Projects: React.FC = () => {
+  const categories = useMemo(() => ['All', ...Array.from(new Set(projects.map((project) => project.category)))], []);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'AI/ML', 'Data Science', 'Analytics', 'Blockchain'];
-  const filteredProjects = selectedCategory === 'All' ? projects : projects.filter((project) => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === 'All' ? projects : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20 lg:py-28">

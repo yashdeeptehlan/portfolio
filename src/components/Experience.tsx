@@ -17,7 +17,9 @@ const Experience: React.FC = () => {
                   <h3 className="text-xl font-medium text-slate-100">{exp.title}</h3>
                   <p className="mt-1 text-slate-300">{exp.company}</p>
                 </div>
-                <span className="rounded border border-slate-700 px-2 py-1 font-mono text-xs capitalize text-slate-300">{exp.type}</span>
+                <span className="rounded border border-slate-700 px-2 py-1 font-mono text-xs capitalize text-slate-300">
+                  {exp.type}
+                </span>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-400">
@@ -43,21 +45,23 @@ const Experience: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-12">
-          <h3 className="font-mono text-xs tracking-[0.16em] text-slate-400">CERTIFICATIONS</h3>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert) => (
-              <div key={cert.id} className="rounded-md border border-slate-800 bg-[#0d1218] p-4">
-                <div className="mb-2 inline-flex rounded border border-cyan-400/40 bg-cyan-400/10 p-1.5">
-                  <Award className="h-3.5 w-3.5 text-cyan-300" />
+        {certifications.length > 0 && (
+          <div className="mt-12">
+            <h3 className="font-mono text-xs tracking-[0.16em] text-slate-400">CERTIFICATIONS</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {certifications.map((cert) => (
+                <div key={cert.id} className="rounded-md border border-slate-800 bg-[#0d1218] p-4">
+                  <div className="mb-2 inline-flex rounded border border-cyan-400/40 bg-cyan-400/10 p-1.5">
+                    <Award className="h-3.5 w-3.5 text-cyan-300" />
+                  </div>
+                  <p className="text-sm text-slate-100">{cert.title}</p>
+                  <p className="mt-1 text-xs text-slate-400">{cert.issuer}</p>
+                  <p className="mt-1 font-mono text-xs text-cyan-300">{cert.year}</p>
                 </div>
-                <p className="text-sm text-slate-100">{cert.title}</p>
-                <p className="mt-1 text-xs text-slate-400">{cert.issuer}</p>
-                <p className="mt-1 font-mono text-xs text-cyan-300">{cert.year}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

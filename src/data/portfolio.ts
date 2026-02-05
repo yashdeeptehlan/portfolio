@@ -1,90 +1,89 @@
 export const personalInfo = {
   name: 'Yashdeep Tehlan',
-  title: 'AI/ML Developer & Blockchain Enthusiast',
+  title: 'AI / Backend Engineer | LLM Systems, RAG Pipelines, FastAPI',
   location: 'Toronto, Ontario, Canada',
   originalLocation: 'New Delhi, India',
-  tagline: 'Recent AI Solutions Development graduate with practical experience in machine learning, data pipelines, and backend development',
-  description: 'Skilled in Python, SQL, and building data-driven applications using modern frameworks. Completed co-op at Cambrian College working on RAG systems and SQL optimization, and remote internship developing blockchain applications. Quick learner with strong problem-solving abilities and hands-on experience with cloud platforms (AWS, GCP), databases (PostgreSQL, DuckDB), and ML tools (TensorFlow, PyTorch, LangChain).',
+  tagline:
+    'AI / Backend Engineer building production-grade LLM applications, RAG pipelines, and data-driven backend systems.',
+  description:
+    'Proven hands-on background in Python, SQL, FastAPI, PostgreSQL, and DuckDB with applied research experience in SQL optimization systems and real-world AI product deployments. Focused on scalable architecture, API design, and practical AI integration for business outcomes.',
   email: 'tehlanyashdeep@gmail.com',
   phone: '+1 (437) 566 3594',
   linkedin: 'https://linkedin.com/in/yashdeeptehlan',
   address: 'Toronto, Ontario, Canada',
-  github: 'https://github.com/yashdeeptehlan'
+  github: 'https://github.com/yashdeeptehlan',
+  workAuthorization: 'Eligible to work full-time in Canada'
 };
 
 export const skills = {
-  'Programming': [
+  Programming: [
     { name: 'Python', level: 95 },
-    { name: 'SQL', level: 90 },
-    { name: 'Solidity', level: 85 },
-    { name: 'JavaScript', level: 80 }
+    { name: 'SQL', level: 92 },
+    { name: 'JavaScript', level: 84 }
   ],
   'ML & Data': [
-    { name: 'TensorFlow', level: 88 },
-    { name: 'PyTorch', level: 85 },
-    { name: 'Scikit-learn', level: 90 },
-    { name: 'Pandas', level: 92 },
-    { name: 'NumPy', level: 90 },
-    { name: 'LangChain', level: 82 },
-    { name: 'Hugging Face', level: 80 }
+    { name: 'LLMs', level: 90 },
+    { name: 'RAG Pipelines', level: 92 },
+    { name: 'Prompt Engineering', level: 90 },
+    { name: 'Embeddings', level: 88 },
+    { name: 'Data Modeling', level: 86 }
   ],
   'Databases & Pipelines': [
-    { name: 'PostgreSQL', level: 87 },
-    { name: 'DuckDB', level: 85 },
-    { name: 'PySpark', level: 88 },
-    { name: 'MySQL', level: 85 },
-    { name: 'ETL workflows', level: 88 }
+    { name: 'PostgreSQL', level: 90 },
+    { name: 'DuckDB', level: 89 },
+    { name: 'Query Optimization', level: 90 },
+    { name: 'ETL', level: 86 }
   ],
-  'Frameworks': [
-    { name: 'FastAPI', level: 88 },
-    { name: 'Flask', level: 82 },
-    { name: 'Django', level: 80 },
-    { name: 'REST APIs', level: 85 }
+  Frameworks: [
+    { name: 'FastAPI', level: 91 },
+    { name: 'REST APIs', level: 90 },
+    { name: 'API Integration', level: 88 },
+    { name: 'System Design', level: 84 }
   ],
   'Cloud & Tools': [
-    { name: 'AWS', level: 85 },
-    { name: 'GCP Vertex AI', level: 80 },
-    { name: 'Git/GitHub', level: 90 },
-    { name: 'Docker', level: 75 },
-    { name: 'Tableau', level: 90 }
+    { name: 'Git / GitHub', level: 92 },
+    { name: 'Docker', level: 82 },
+    { name: 'Vercel', level: 88 },
+    { name: 'Supabase', level: 84 },
+    { name: 'GCP Vertex AI', level: 82 },
+    { name: 'AWS Cloud Foundations', level: 80 }
   ],
-  'Other': [
-    { name: 'Blockchain (Ethereum)', level: 88 },
-    { name: 'Smart Contracts', level: 85 },
-    { name: 'RAG systems', level: 82 },
-    { name: 'NLP', level: 80 }
+  Other: [
+    { name: 'Technical Documentation', level: 88 },
+    { name: 'Backend Architecture', level: 87 },
+    { name: 'Optimization Workflows', level: 88 }
   ]
 };
 
 export const education = [
   {
     id: 1,
-    degree: 'Postgraduate Certificate – Applied AI Solutions Development',
+    degree: 'Postgraduate Certificate - Applied AI Solutions Development',
     institution: 'George Brown College',
     location: 'Toronto, ON',
     duration: 'Sept 2024 - Sept 2025',
     status: 'Completed',
-    focus: 'Machine learning models, data preprocessing, business insights through Tableau, AI solution development',
+    focus: 'Applied AI solution development, model implementation, and business-focused AI workflows.',
     type: 'postgraduate'
   },
   {
     id: 2,
-    degree: 'Postgraduate Diploma – Backend & Blockchain Development',
+    degree: 'Postgraduate Diploma - Backend & Blockchain Development',
     institution: 'York University',
     location: 'Toronto, ON',
     duration: 'Aug 2023 - May 2024',
     status: 'Completed',
-    focus: 'Backend applications, blockchain solutions, smart contracts, decentralized applications',
+    focus: 'Backend systems, API development, and blockchain platform engineering.',
     type: 'postgraduate'
   },
   {
     id: 3,
-    degree: 'B.Tech – Computer Science (Big Data Analytics)',
+    degree: 'Bachelor of Technology - Computer Science (Big Data Analytics)',
     institution: 'PDM University',
     location: 'New Delhi, India',
     duration: 'Sept 2018 - May 2022',
     status: 'Completed',
-    focus: 'Software development, database management, data structures, big data analytics',
+    focus: 'Computer science fundamentals, data analytics, and scalable software systems.',
     type: 'undergraduate'
   }
 ];
@@ -92,108 +91,92 @@ export const education = [
 export const projects = [
   {
     id: 1,
-    title: 'AI Interview Assistant',
-    date: '2025 - Present',
-    description: 'Full-stack AI-powered mock interview platform serving real users as alternative to Ribbon.ai with complete interview flow and AI scoring engine.',
-    technologies: ['React', 'Node.js', 'FastAPI', 'OpenAI API', 'Vercel'],
-    features: [
-      'Complete interview flow: question generation, real-time response analysis',
-      'AI scoring engine with structured feedback system and PDF export',
-      'FastAPI backend with optimized prompt engineering to reduce inference costs',
-      'Deployed React frontend on Vercel with responsive design',
-      'Live production application serving real users'
-    ],
-    category: 'AI/ML',
-    liveUrl: 'https://ai-interviewer-ytxk.vercel.app/'
-  },
-  {
-    id: 2,
-    title: 'The Dare Protocol',
-    date: '2025 - Present',
-    description: 'Backend infrastructure and smart contract architecture for Solana-based decentralized challenge/bounty marketplace.',
-    technologies: ['Solana', 'Rust', 'Node.js', 'Smart Contracts'],
-    features: [
-      'On-chain program logic for dare creation, user verification, escrow management',
-      'Automated reward distribution using Solana runtime',
-      'RESTful APIs with Node.js for platform operations and blockchain interaction',
-      'Transaction monitoring, error handling, and retry mechanisms',
-      'Seamless frontend integration for optimal user experience'
-    ],
-    category: 'Blockchain',
-    liveUrl: 'https://thedare.io'
-  },
-  {
-    id: 3,
-    title: 'ArbiGen – AI-Driven Crypto Arbitrage & Price Prediction',
+    title: 'Schemon - AI SQL Optimization System',
     date: '2025',
-    description: 'Trained LSTM models for cryptocurrency price prediction and built FastAPI deployment for real-time predictions.',
-    technologies: ['Python', 'LSTM', 'FastAPI', 'TensorFlow'],
+    description:
+      'AI-assisted SQL optimization system leveraging LLMs, DuckDB, and PostgreSQL to improve query quality and execution efficiency.',
+    technologies: ['Python', 'FastAPI', 'LLMs', 'DuckDB', 'PostgreSQL'],
     features: [
-      'LSTM models for cryptocurrency price prediction using live market data',
-      'FastAPI backend deployment for real-time predictions',
-      'Automated backtesting and monitoring pipelines',
-      'Performance evaluation and model accuracy tracking'
+      'Implemented query analysis and optimization suggestions based on execution plans.',
+      'Built LLM-powered workflow for SQL refinement and validation.',
+      'Applied EXPLAIN ANALYZE benchmarking to evaluate output quality.',
+      'Supported production-oriented optimization workflows for research applications.'
     ],
     category: 'AI/ML'
   },
   {
-    id: 4,
-    title: 'Amazon Reviews Cross-Sell Analysis',
+    id: 2,
+    title: 'Noun - AI Manufacturer Matching Platform',
     date: '2025',
-    description: 'Built ETL pipelines for 700K+ Amazon reviews with sentiment analysis and cross-sell recommendations.',
-    technologies: ['PySpark', 'SQL', 'Python'],
+    description:
+      'Semantic search and ranking platform for manufacturer discovery using embeddings and backend recommendation workflows.',
+    technologies: ['Python', 'Embeddings', 'RAG', 'FastAPI', 'PostgreSQL'],
     features: [
-      'ETL pipelines for 700K+ Amazon reviews using PySpark & SQL',
-      'Sentiment analysis and cross-sell scoring algorithms',
-      'Targeted marketing recommendations based on customer patterns',
-      'Scalable data processing and analysis workflows'
+      'Developed embedding-based semantic search pipelines for discovery accuracy.',
+      'Implemented ranking logic for AI-powered matching recommendations.',
+      'Integrated backend APIs to support AI-driven product workflows.',
+      'Collaborated on research-to-deployment backend integration.'
     ],
-    category: 'Data Science'
+    category: 'AI/ML'
   },
   {
-    id: 5,
-    title: 'HR Dashboard',
-    date: '2025',
-    description: 'Created interactive Tableau dashboards with SQL pipelines for comprehensive workforce analytics.',
-    technologies: ['Tableau', 'SQL', 'Data Visualization'],
+    id: 3,
+    title: 'AI Interview Assistant',
+    date: '2025 - Jan 2026',
+    description:
+      'Production AI interview platform with automated question generation, response analysis, and structured feedback delivery.',
+    technologies: ['FastAPI', 'LLM APIs', 'Prompt Engineering', 'Vercel', 'PDF Export'],
     features: [
-      'Interactive Tableau dashboards with real-time SQL pipelines',
-      'Comprehensive workforce analytics and reporting',
-      'Employee performance and retention metrics',
-      'Real-time data integration and automated reporting'
+      'Built and deployed end-to-end backend services for interview workflows.',
+      'Designed scoring and feedback pipelines with report generation.',
+      'Optimized prompts and API orchestration to reduce inference costs.',
+      'Delivered production release and supported ongoing platform improvements.'
     ],
-    category: 'Analytics'
+    category: 'Backend'
   }
 ];
 
 export const experience = [
   {
     id: 1,
-    title: 'AI/ML Developer – Co-op',
+    title: 'AI / ML Developer',
     company: 'Cambrian College Applied Research',
     location: 'Sudbury, ON',
     duration: 'May 2025 - Sept 2025',
-    type: 'co-op',
+    type: 'applied research',
     achievements: [
-      'Worked on developing RAG (retrieval-augmented generation) pipelines integrated with DuckDB and PostgreSQL for SQL query optimization project',
-      'Helped build AI-powered SQL optimization modules using LLMs with validation using EXPLAIN/ANALYZE',
-      'Contributed to cosmetics manufacturer matchmaking platform using RAG agents with embedding-based search and ranking',
-      'Supported data engineering workflows and integration with cloud platforms',
-      'Gained hands-on experience with prompt engineering and LLM application development'
+      'Designed and implemented RAG pipelines using DuckDB and PostgreSQL to support AI-driven SQL query optimization.',
+      'Built and validated LLM-based SQL optimization workflows using EXPLAIN ANALYZE benchmarking.',
+      'Contributed to an AI manufacturer matchmaking platform with embedding-based semantic search and ranking.',
+      'Supported backend data engineering workflows, prompt evaluation, and cross-project system refinement.',
+      'Collaborated with researchers and engineers to translate research requirements into deployable AI systems.'
     ]
   },
   {
     id: 2,
-    title: 'Backend & Blockchain Developer – Intern (Part-Time, Remote)',
-    company: 'TeBlox Labs',
-    location: 'Dubai, UAE',
-    duration: 'Jan 2024 - Dec 2024',
-    type: 'internship',
+    title: 'Backend Engineer - AI Interview Assistant',
+    company: 'Independent Product Deployment',
+    location: 'Remote',
+    duration: '2025 - Jan 2026',
+    type: 'product engineering',
     achievements: [
-      'Developed smart contract features on Ethereum and Blast network (ERC-20/721 standards)',
-      'Integrated AI components into decentralized exchange platforms using GraphQL and React',
-      'Wrote automated test scripts using Selenium and Mocha for quality assurance',
-      'Worked on blockchain security audits and performance optimization'
+      'Built and deployed a production AI interview platform for automated question generation and response analysis.',
+      'Designed FastAPI backend services integrating LLM APIs with cost-efficient prompt strategies.',
+      'Developed scoring logic, feedback pipelines, and PDF report export functionality.',
+      'Managed end-to-end system delivery from architecture and backend build to production deployment.'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Backend Engineer - TeBlox Labs (Blockchain Platform)',
+    company: 'TeBlox Labs',
+    location: 'Remote',
+    duration: '2024',
+    type: 'backend engineering',
+    achievements: [
+      'Developed backend components and API integrations for a blockchain-based platform.',
+      'Implemented automated test scripts and supported performance and security review cycles.',
+      'Contributed to stable backend delivery across integration and validation phases.'
     ]
   }
 ];

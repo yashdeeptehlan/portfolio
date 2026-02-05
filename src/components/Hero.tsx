@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const texts = ['AI/ML Developer', 'Blockchain Enthusiast', 'Data Scientist', 'Innovation Builder'];
+  const texts = ['AI / Backend Engineer', 'LLM & RAG Systems', 'FastAPI & SQL Optimization', 'Production AI Deployment'];
 
   useEffect(() => {
     const typeSpeed = isDeleting ? 45 : 90;
@@ -43,21 +43,15 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative flex min-h-screen items-center pt-24">
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
         <div>
-          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-cyan-300">FULL STACK AI ENGINEER</p>
-          <h1 className="text-4xl font-semibold leading-tight text-slate-100 sm:text-6xl">
-            {personalInfo.name}
-          </h1>
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-cyan-300">{personalInfo.title.toUpperCase()}</p>
+          <h1 className="text-4xl font-semibold leading-tight text-slate-100 sm:text-6xl">{personalInfo.name}</h1>
           <p className="mt-5 font-mono text-lg text-slate-300 sm:text-xl">
             <span className="text-cyan-300">{currentText}</span>
             <span className="ml-1 animate-pulse text-slate-500">|</span>
           </p>
 
-          <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-            {personalInfo.tagline}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            {personalInfo.description}
-          </p>
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">{personalInfo.tagline}</p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">{personalInfo.description}</p>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <button

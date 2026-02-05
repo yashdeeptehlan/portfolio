@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <p className="font-mono text-xs tracking-[0.18em] text-cyan-300">06 / CONTACT</p>
-        <h2 className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl">Let&apos;s build something meaningful.</h2>
+        <h2 className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl">Let&apos;s build scalable AI products.</h2>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <aside className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6">
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="mt-8 rounded-md border border-slate-800 bg-[#0c1117] p-4 text-sm text-slate-400">
-              Open to co-op, internships, and full-time roles in AI/ML, data engineering, and backend systems.
+              Open to full-time AI Engineer, Backend Engineer, and Applied ML Engineer opportunities. {personalInfo.workAuthorization}.
             </div>
           </aside>
 
