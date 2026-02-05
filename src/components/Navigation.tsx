@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 interface NavigationProps {
@@ -10,13 +10,13 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ activeSection, isMenuOpen, setIsMenuOpen }) => {
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'education', label: 'Education' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'hero', label: 'Home', index: '00' },
+    { id: 'about', label: 'About', index: '01' },
+    { id: 'skills', label: 'Skills', index: '02' },
+    { id: 'education', label: 'Education', index: '03' },
+    { id: 'projects', label: 'Projects', index: '04' },
+    { id: 'experience', label: 'Experience', index: '05' },
+    { id: 'contact', label: 'Contact', index: '06' }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -28,126 +28,77 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, isMenuOpen, setI
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-coffee-bean/95 backdrop-blur-md border-b border-wisteria/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold bg-gradient-to-r from-tea-green to-wisteria bg-clip-text text-transparent hover:scale-105 transition-transform"
-            >
-              YT
-            </button>
+    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-800/80 bg-[#090c10]/90 backdrop-blur">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <button
+            onClick={() => scrollToSection('hero')}
+            className="font-mono text-sm tracking-[0.18em] text-slate-200 transition hover:text-cyan-300"
+          >
+            YASHDEEP.T
+          </button>
+
+          <div className="hidden items-center gap-6 lg:flex">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`font-mono text-xs tracking-wide transition ${
+                  activeSection === item.id ? 'text-cyan-300' : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                {item.index}.{item.label}
+              </button>
+            ))}
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="flex items-center space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 text-sm font-medium transition-colors relative ${
-                    activeSection === item.id
-                      ? 'text-neon-violet'
-                      : 'text-light-cyan hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-tea-green to-neon-violet rounded-full"></div>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden items-center gap-2 lg:flex">
             <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-cyan/70 hover:text-neon-violet transition-colors p-2 rounded-lg hover:bg-wisteria/10"
+              className="rounded-md border border-slate-700 p-2 text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="h-4 w-4" />
             </a>
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-cyan/70 hover:text-neon-violet transition-colors p-2 rounded-lg hover:bg-wisteria/10"
+              className="rounded-md border border-slate-700 p-2 text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+              aria-label="GitHub"
             >
-              <Github className="w-5 h-5" />
+              <Github className="h-4 w-4" />
             </a>
-            <button className="flex items-center space-x-2 bg-gradient-to-r from-wisteria to-neon-violet px-6 py-2.5 rounded-lg text-white text-sm font-medium hover:from-wisteria/80 hover:to-neon-violet/80 transition-all hover:scale-105 shadow-lg">
-              <Download className="w-4 h-4" />
-              <span>Resume</span>
-            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-light-cyan/70 hover:text-white p-2 rounded-lg hover:bg-wisteria/10 transition-colors"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="rounded-md border border-slate-700 p-2 text-slate-300 transition hover:text-white lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-coffee-bean/98 backdrop-blur-md border-t border-wisteria/20">
-          <div className="px-4 pt-2 pb-4 space-y-1">
+        <div className="border-t border-slate-800 bg-[#090c10] px-4 py-4 lg:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col gap-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                className={`w-full rounded-md border px-3 py-2 text-left font-mono text-xs tracking-wide transition ${
                   activeSection === item.id
-                    ? 'text-neon-violet bg-wisteria/10'
-                    : 'text-light-cyan hover:text-white hover:bg-wisteria/5'
+                    ? 'border-cyan-400/50 text-cyan-300'
+                    : 'border-slate-700 text-slate-300 hover:text-slate-100'
                 }`}
               >
-                {item.label}
+                {item.index}.{item.label}
               </button>
             ))}
-            
-            {/* Mobile social links */}
-            <div className="flex items-center justify-center space-x-6 pt-6 pb-2">
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light-cyan/70 hover:text-neon-violet transition-colors p-2 rounded-lg hover:bg-wisteria/10"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light-cyan/70 hover:text-neon-violet transition-colors p-2 rounded-lg hover:bg-wisteria/10"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="text-light-cyan/70 hover:text-neon-violet transition-colors p-2 rounded-lg hover:bg-wisteria/10"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
-            
-            {/* Mobile resume button */}
-            <button className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-wisteria to-neon-violet px-6 py-3 rounded-lg text-white font-medium hover:from-wisteria/80 hover:to-neon-violet/80 transition-all mt-4">
-              <Download className="w-4 h-4" />
-              <span>Download Resume</span>
-            </button>
           </div>
         </div>
       )}

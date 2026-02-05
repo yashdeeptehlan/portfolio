@@ -1,131 +1,57 @@
 import React from 'react';
-import { User, Heart, Target, Zap, Globe, Award } from 'lucide-react';
+import { Globe, Sparkles, Target, Zap } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-wisteria/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-tea-green to-neon-violet bg-clip-text text-transparent">
-              About Me
-            </span>
-          </h2>
-          <p className="text-xl lg:text-2xl text-light-cyan max-w-4xl mx-auto leading-relaxed">
-            Recent AI Solutions Development graduate with practical experience and passion for innovation
-          </p>
-        </div>
+    <section id="about" className="py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="font-mono text-xs tracking-[0.18em] text-cyan-300">01 / ABOUT</p>
+        <h2 className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl">Engineering mindset, product focus.</h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left side - Story */}
-          <div className="space-y-8 flex flex-col">
-            <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-wisteria/30 hover:border-neon-violet/50 transition-all duration-300">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-r from-wisteria to-neon-violet rounded-xl flex items-center justify-center">
-                  <User className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white">My Journey</h3>
-              </div>
-              <div className="space-y-6 text-light-cyan leading-relaxed text-base lg:text-lg">
-                <p>
-                  Originally from <span className="text-tea-green font-medium">New Delhi, India</span>, I embarked on an exciting journey to 
-                  <span className="text-neon-violet font-medium"> Toronto, Canada</span> to pursue my passion for artificial intelligence and technology.
-                </p>
-                <p>
-                  As a recent AI Solutions Development graduate, I've gained practical experience through co-op positions and internships, 
-                  working on cutting-edge projects involving RAG systems, SQL optimization, and blockchain applications.
-                </p>
-                <p>
-                  I'm a <span className="text-tea-green font-medium">quick learner</span> with 
-                  <span className="text-neon-violet font-medium"> strong problem-solving abilities</span>, constantly pushing the boundaries of what's possible 
-                  through hands-on experience with modern frameworks and cloud platforms.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <article className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6 sm:p-8">
+            <p className="text-slate-300">
+              Originally from <span className="text-slate-100">{personalInfo.originalLocation}</span>, I moved to
+              <span className="text-cyan-300"> {personalInfo.location}</span> to build practical AI-driven systems.
+            </p>
+            <p className="mt-4 text-slate-400">
+              I work across machine learning, backend engineering, data workflows, and blockchain. I care about building reliable systems that are useful in production, not just demos.
+            </p>
+            <p className="mt-4 text-slate-400">
+              My approach is simple: understand the problem deeply, ship lean, then iterate fast with measurable improvements.
+            </p>
 
-          {/* Right side - Key points */}
-          <div className="space-y-6 flex flex-col">
-            <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-wisteria/30 hover:border-tea-green/50 transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-tea-green to-light-cyan rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Heart className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                ['3+', 'Years Experience'],
+                ['15+', 'Technologies'],
+                ['5+', 'Projects'],
+                ['2', 'Countries']
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-md border border-slate-800 bg-[#0c1117] p-3 text-center">
+                  <p className="font-mono text-xl text-cyan-300">{value}</p>
+                  <p className="mt-1 text-xs text-slate-500">{label}</p>
                 </div>
-                <div>
-                  <h4 className="text-lg lg:text-xl font-semibold text-white">Passion-Driven</h4>
-                  <p className="text-light-cyan/70 text-sm lg:text-base">Deep interest in AI, machine learning, and innovative solutions</p>
-                </div>
-              </div>
+              ))}
             </div>
+          </article>
 
-            <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-wisteria/30 hover:border-neon-violet/50 transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-wisteria to-neon-violet rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Target className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+          <div className="grid gap-3">
+            {[
+              { icon: Sparkles, title: 'Passion-Driven', text: 'Deep interest in AI, ML, and real-world innovation.' },
+              { icon: Target, title: 'Solution-Focused', text: 'Build practical systems with clear outcomes.' },
+              { icon: Zap, title: 'Execution Speed', text: 'Rapid learner with strong implementation pace.' },
+              { icon: Globe, title: 'Global Perspective', text: 'Education and experience across India and Canada.' }
+            ].map((item) => (
+              <div key={item.title} className="rounded-md border border-slate-800 bg-[#0e131a]/75 p-4">
+                <div className="flex items-center gap-3">
+                  <item.icon className="h-4 w-4 text-cyan-300" />
+                  <h3 className="text-sm font-medium text-slate-100">{item.title}</h3>
                 </div>
-                <div>
-                  <h4 className="text-lg lg:text-xl font-semibold text-white">Solution-Focused</h4>
-                  <p className="text-light-cyan/70 text-sm lg:text-base">Building practical, scalable solutions using modern frameworks</p>
-                </div>
+                <p className="mt-2 text-sm text-slate-400">{item.text}</p>
               </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-wisteria/30 hover:border-tea-green/50 transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-tea-green to-light-cyan rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg lg:text-xl font-semibold text-white">Engineering Mindset</h4>
-                  <p className="text-light-cyan/70 text-sm lg:text-base">Strong problem-solving abilities with hands-on experience</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-wisteria/30 hover:border-light-cyan/50 transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-light-cyan to-wisteria rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Globe className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg lg:text-xl font-semibold text-white">Global Perspective</h4>
-                  <p className="text-light-cyan/70 text-sm lg:text-base">Cross-cultural experience with cloud platforms and modern technologies</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced Stats - Moved outside grid and centered */}
-        <div className="mt-16 lg:mt-20 flex justify-center">
-          <div className="bg-gradient-to-br from-wisteria/10 to-coffee-bean/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-wisteria/30 max-w-2xl w-full">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-tea-green to-neon-violet bg-clip-text text-transparent">
-                  3+
-                </div>
-                <div className="text-xs lg:text-sm text-light-cyan/70">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-light-cyan to-wisteria bg-clip-text text-transparent">
-                  15+
-                </div>
-                <div className="text-xs lg:text-sm text-light-cyan/70">Technologies</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-wisteria to-neon-violet bg-clip-text text-transparent">
-                  5+
-                </div>
-                <div className="text-xs lg:text-sm text-light-cyan/70">Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-tea-green to-light-cyan bg-clip-text text-transparent">
-                  2
-                </div>
-                <div className="text-xs lg:text-sm text-light-cyan/70">Countries</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

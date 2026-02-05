@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, MapPin, Mail, Phone, ExternalLink, Sparkles } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ChevronDown, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 const Hero: React.FC = () => {
@@ -11,8 +11,8 @@ const Hero: React.FC = () => {
   const texts = ['AI/ML Developer', 'Blockchain Enthusiast', 'Data Scientist', 'Innovation Builder'];
 
   useEffect(() => {
-    const typeSpeed = isDeleting ? 50 : 100;
-    const pauseTime = isDeleting ? 500 : 2000;
+    const typeSpeed = isDeleting ? 45 : 90;
+    const pauseTime = isDeleting ? 500 : 1800;
 
     const timer = setTimeout(() => {
       if (!isDeleting && charIndex < texts[textIndex].length) {
@@ -40,118 +40,88 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-coffee-bean">
-      {/* Enhanced background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-coffee-bean via-coffee-bean/80 to-coffee-bean"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-wisteria/20 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-neon-violet/20 via-transparent to-transparent"></div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-tea-green/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-neon-violet/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-light-cyan/5 rounded-full blur-3xl animate-pulse"></div>
-      </div>
+    <section id="hero" className="relative flex min-h-screen items-center pt-24">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
+        <div>
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-cyan-300">FULL STACK AI ENGINEER</p>
+          <h1 className="text-4xl font-semibold leading-tight text-slate-100 sm:text-6xl">
+            {personalInfo.name}
+          </h1>
+          <p className="mt-5 font-mono text-lg text-slate-300 sm:text-xl">
+            <span className="text-cyan-300">{currentText}</span>
+            <span className="ml-1 animate-pulse text-slate-500">|</span>
+          </p>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main content */}
-        <div className="space-y-8">
-          {/* Location with enhanced styling */}
-          <div className="flex items-center justify-center space-x-2 text-neon-violet mb-6">
-            <div className="flex items-center space-x-2 bg-wisteria/10 backdrop-blur-sm px-4 py-2 rounded-full border border-wisteria/30">
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm font-medium">{personalInfo.location}</span>
-            </div>
-          </div>
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            {personalInfo.tagline}
+          </p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
+            {personalInfo.description}
+          </p>
 
-          {/* Name and title with enhanced typography */}
-          <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <Sparkles className="w-6 h-6 text-tea-green animate-pulse" />
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold">
-                <span className="bg-gradient-to-r from-white via-light-cyan to-tea-green bg-clip-text text-transparent">
-                  {personalInfo.name}
-                </span>
-              </h1>
-              <Sparkles className="w-6 h-6 text-tea-green animate-pulse" />
-            </div>
-            
-            <div className="h-16 flex items-center justify-center">
-              <p className="text-xl sm:text-2xl lg:text-3xl text-light-cyan">
-                <span className="text-neon-violet font-medium">{currentText}</span>
-                <span className="animate-pulse text-wisteria ml-1">|</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Enhanced tagline */}
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl lg:text-2xl text-light-cyan leading-relaxed font-light">
-              {personalInfo.tagline}
-            </p>
-          </div>
-
-          {/* Description with better spacing */}
-          <div className="max-w-3xl mx-auto">
-            <p className="text-light-cyan/70 text-base sm:text-lg leading-relaxed">
-              {personalInfo.description}
-            </p>
-          </div>
-
-          {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pt-8">
+          <div className="mt-10 flex flex-wrap gap-3">
             <button
               onClick={() => scrollToSection('projects')}
-              className="w-full sm:w-auto bg-gradient-to-r from-wisteria to-neon-violet px-8 py-4 rounded-xl text-white font-medium hover:from-wisteria/80 hover:to-neon-violet/80 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-neon-violet/25 border border-neon-violet/20"
+              className="rounded-md border border-cyan-400/50 bg-cyan-400/10 px-5 py-2.5 font-mono text-xs tracking-wide text-cyan-200 transition hover:border-cyan-300 hover:bg-cyan-300/15"
             >
-              View Projects
+              VIEW PROJECTS
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="w-full sm:w-auto border border-wisteria/50 bg-wisteria/10 backdrop-blur-sm px-8 py-4 rounded-xl text-light-cyan hover:bg-wisteria/20 hover:border-wisteria/70 transform hover:scale-105 transition-all duration-300"
+              className="rounded-md border border-slate-700 px-5 py-2.5 font-mono text-xs tracking-wide text-slate-200 transition hover:border-slate-500"
             >
-              Contact Me
+              CONTACT
             </button>
-          </div>
-
-          {/* Enhanced quick contact info */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-12 max-w-2xl mx-auto">
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="flex items-center justify-center space-x-2 bg-wisteria/10 backdrop-blur-sm border border-wisteria/30 rounded-lg px-4 py-3 hover:bg-wisteria/20 hover:border-neon-violet/50 transition-all text-sm text-light-cyan/70 hover:text-neon-violet"
-            >
-              <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">{personalInfo.email}</span>
-              <span className="sm:hidden">Email</span>
-            </a>
-            <a
-              href={`tel:${personalInfo.phone}`}
-              className="flex items-center justify-center space-x-2 bg-wisteria/10 backdrop-blur-sm border border-wisteria/30 rounded-lg px-4 py-3 hover:bg-wisteria/20 hover:border-neon-violet/50 transition-all text-sm text-light-cyan/70 hover:text-neon-violet"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">{personalInfo.phone}</span>
-              <span className="sm:hidden">Phone</span>
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 bg-wisteria/10 backdrop-blur-sm border border-wisteria/30 rounded-lg px-4 py-3 hover:bg-wisteria/20 hover:border-neon-violet/50 transition-all text-sm text-light-cyan/70 hover:text-neon-violet"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>LinkedIn</span>
-            </a>
           </div>
         </div>
 
-        {/* Enhanced scroll indicator */}
-        <button
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-light-cyan/70 hover:text-white transition-colors animate-bounce bg-wisteria/10 backdrop-blur-sm rounded-full p-3 border border-wisteria/30 hover:border-neon-violet/50"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </button>
+        <aside className="rounded-xl border border-slate-800 bg-[#0e131a]/80 p-6">
+          <p className="mb-4 font-mono text-xs tracking-[0.16em] text-slate-400">SYSTEM PROFILE</p>
+          <div className="space-y-4 text-sm text-slate-300">
+            <div className="flex items-start gap-3 border-b border-slate-800 pb-3">
+              <MapPin className="mt-0.5 h-4 w-4 text-cyan-300" />
+              <div>
+                <p className="font-mono text-xs text-slate-500">LOCATION</p>
+                <p>{personalInfo.location}</p>
+              </div>
+            </div>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-start gap-3 border-b border-slate-800 pb-3 transition hover:text-cyan-300"
+            >
+              <Mail className="mt-0.5 h-4 w-4 text-cyan-300" />
+              <div>
+                <p className="font-mono text-xs text-slate-500">EMAIL</p>
+                <p>{personalInfo.email}</p>
+              </div>
+            </a>
+            <a href={`tel:${personalInfo.phone}`} className="flex items-start gap-3 transition hover:text-cyan-300">
+              <Phone className="mt-0.5 h-4 w-4 text-cyan-300" />
+              <div>
+                <p className="font-mono text-xs text-slate-500">PHONE</p>
+                <p>{personalInfo.phone}</p>
+              </div>
+            </a>
+          </div>
+
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-wide text-cyan-300 transition hover:text-cyan-200"
+          >
+            OPEN LINKEDIN <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </aside>
       </div>
+
+      <button
+        onClick={() => scrollToSection('about')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 transition hover:text-cyan-300"
+        aria-label="Scroll to about section"
+      >
+        <ChevronDown className="h-6 w-6 animate-bounce" />
+      </button>
     </section>
   );
 };
