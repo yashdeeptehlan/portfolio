@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
+import { CinematicHero } from './components/ui/cinematic-landing-hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import CursorGlow from './components/CursorGlow';
 import { useScrollSpy } from './hooks/useScrollSpy';
 
 function App() {
@@ -16,8 +17,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0d12] text-slate-100">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(56,189,248,0.1),transparent_35%),radial-gradient(circle_at_85%_80%,rgba(52,211,153,0.08),transparent_40%)]" />
-      <div className="pointer-events-none fixed inset-0 -z-10 opacity-[0.16] [background-image:linear-gradient(rgba(148,163,184,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.18)_1px,transparent_1px)] [background-size:36px_36px]" />
+      <CursorGlow />
 
       <Navigation
         activeSection={activeSection}
@@ -26,7 +26,7 @@ function App() {
       />
 
       <main>
-        <Hero />
+        <CinematicHero id="hero" />
         <About />
         <Skills />
         <Education />

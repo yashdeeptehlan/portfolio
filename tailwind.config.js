@@ -3,6 +3,11 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Archivo', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['Space Grotesk', 'JetBrains Mono', 'monospace'],
+        code: ['JetBrains Mono', 'monospace'],
+      },
       colors: {
         'tea-green': '#caffd0',
         'light-cyan': '#c9e4e7',
