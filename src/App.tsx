@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import ProjectsGallery from './components/ProjectsGallery';
 import Contact from './components/Contact';
 import CursorGlow from './components/CursorGlow';
 import { useScrollSpy } from './hooks/useScrollSpy';
@@ -31,6 +32,7 @@ function App() {
         <Skills />
         <Education />
         <Projects />
+        <ProjectsGallery />
         <Experience />
         <Contact />
       </main>
