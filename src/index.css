@@ -5,7 +5,15 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+.dark {
   color-scheme: dark;
+  --scrollbar-track: #0a0d12;
+  --scrollbar-thumb: #1e293b;
 }
 
 html {
@@ -14,8 +22,8 @@ html {
 
 body {
   margin: 0;
-  background: #0a0d12;
-  color: #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
   font-family: 'Archivo', system-ui, -apple-system, sans-serif;
   /* Hide native cursor on pointer:fine (desktop) — shown by CursorGlow */
 }
@@ -95,10 +103,10 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0d12;
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--scrollbar-thumb);
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {

@@ -14,8 +14,7 @@ const ProjectsGallery: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-12"
-      style={{ background: 'linear-gradient(180deg, #0a0d12 0%, #060910 50%, #0a0d12 100%)' }}
+      className="relative overflow-hidden py-12 bg-slate-100 dark:bg-[#060910]"
     >
       {/* Subtle radial glow behind the panels */}
       <div
@@ -30,7 +29,7 @@ const ProjectsGallery: React.FC = () => {
       {/* Section header */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-6">
         <motion.p
-          className="font-mono text-xs tracking-[0.18em] text-cyan-300"
+          className="font-mono text-xs tracking-[0.18em] text-cyan-600 dark:text-cyan-300"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -39,7 +38,7 @@ const ProjectsGallery: React.FC = () => {
           IN PRODUCTION
         </motion.p>
         <motion.h2
-          className="mt-2 text-3xl font-semibold text-slate-100 sm:text-4xl"
+          className="mt-2 text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -48,7 +47,7 @@ const ProjectsGallery: React.FC = () => {
           Work I've shipped.
         </motion.h2>
         <motion.p
-          className="mt-2 text-slate-400 text-sm max-w-lg"
+          className="mt-2 text-slate-600 dark:text-slate-400 text-sm max-w-lg"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -80,15 +79,15 @@ const ProjectsGallery: React.FC = () => {
       >
         <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
           {[
-            { name: 'PromptForge', color: 'text-cyan-400', tag: 'MCP · Python' },
-            { name: 'Polymarket Bot', color: 'text-emerald-400', tag: 'Trading · FastAPI' },
-            { name: 'AI-Interviewer', color: 'text-violet-400', tag: 'Voice AI · Next.js' },
-            { name: 'Hitch', color: 'text-emerald-300', tag: 'Rideshare · React' },
-            { name: 'VaultX', color: 'text-amber-400', tag: 'Exchange · Escrow' },
+            { name: 'PromptForge', color: 'text-cyan-600 dark:text-cyan-400', tag: 'MCP · Python' },
+            { name: 'Polymarket Bot', color: 'text-emerald-600 dark:text-emerald-400', tag: 'Trading · FastAPI' },
+            { name: 'AI-Interviewer', color: 'text-violet-600 dark:text-violet-400', tag: 'Voice AI · Next.js' },
+            { name: 'Hitch', color: 'text-emerald-600 dark:text-emerald-300', tag: 'Rideshare · React' },
+            { name: 'VaultX', color: 'text-amber-600 dark:text-amber-400', tag: 'Exchange · Escrow' },
           ].map(({ name, color, tag }) => (
             <div key={name} className="flex items-center gap-1.5">
               <span className={`text-xs font-medium ${color}`}>{name}</span>
-              <span className="text-[10px] text-slate-600">{tag}</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-600">{tag}</span>
             </div>
           ))}
         </div>

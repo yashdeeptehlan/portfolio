@@ -40,12 +40,12 @@ function AnimatedStat({ value, label }: { value: string; label: string }) {
     <motion.div
       ref={ref}
       variants={fadeUp}
-      className="rounded-md border border-slate-800 bg-[#0c1117] p-3 text-center"
+      className="rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c1117] p-3 text-center"
       whileHover={{ borderColor: 'rgba(6,182,212,0.3)', scale: 1.04 }}
       transition={{ duration: 0.2 }}
     >
-      <p className="font-mono text-base text-cyan-300 sm:text-xl">{display}</p>
-      <p className="mt-1 text-xs text-slate-500">{label}</p>
+      <p className="font-mono text-base text-cyan-600 dark:text-cyan-300 sm:text-xl">{display}</p>
+      <p className="mt-1 text-xs text-slate-500 dark:text-slate-500">{label}</p>
     </motion.div>
   );
 }
@@ -72,7 +72,7 @@ const About: React.FC = () => {
     <section id="about" ref={sectionRef} className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.p
-          className="font-mono text-xs tracking-[0.18em] text-cyan-300"
+          className="font-mono text-xs tracking-[0.18em] text-cyan-600 dark:text-cyan-300"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -81,7 +81,7 @@ const About: React.FC = () => {
           01 / ABOUT
         </motion.p>
         <motion.h2
-          className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl"
+          className="mt-3 text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -92,19 +92,19 @@ const About: React.FC = () => {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <motion.article
-            className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6 sm:p-8"
+            className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-6 sm:p-8"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-slate-300">
-              Based in <span className="text-cyan-300">{personalInfo.location}</span>, I build and ship production-grade AI systems with strong backend foundations.
+            <p className="text-slate-700 dark:text-slate-300">
+              Based in <span className="text-cyan-600 dark:text-cyan-300">{personalInfo.location}</span>, I build and ship production-grade AI systems with strong backend foundations.
             </p>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-600 dark:text-slate-400">
               My work centers on LLM applications, RAG pipelines, SQL optimization workflows, and API-first backend architecture. I focus on practical delivery: measurable performance, maintainable code, and scalable system design.
             </p>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-600 dark:text-slate-400">
               I combine applied research rigor with product execution speed to take systems from concept to deployed production environments.
             </p>
 
@@ -131,15 +131,15 @@ const About: React.FC = () => {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="rounded-md border border-slate-800 bg-[#0e131a]/75 p-4"
+                className="rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-4"
                 whileHover={{ borderColor: 'rgba(6,182,212,0.25)', x: 4 }}
                 transition={{ duration: 0.2 }}
               >
                 <div className="flex items-center gap-3">
-                  <item.icon className="h-4 w-4 text-cyan-300" />
-                  <h3 className="text-sm font-medium text-slate-100">{item.title}</h3>
+                  <item.icon className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
+                  <h3 className="text-sm font-medium text-slate-900 dark:text-slate-100">{item.title}</h3>
                 </div>
-                <p className="mt-2 text-sm text-slate-400">{item.text}</p>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
               </motion.div>
             ))}
           </motion.div>

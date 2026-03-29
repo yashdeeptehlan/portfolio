@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     <section id="contact" ref={sectionRef} className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.p
-          className="font-mono text-xs tracking-[0.18em] text-cyan-300"
+          className="font-mono text-xs tracking-[0.18em] text-cyan-600 dark:text-cyan-300"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
           06 / CONTACT
         </motion.p>
         <motion.h2
-          className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl"
+          className="mt-3 text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -48,33 +48,33 @@ const Contact: React.FC = () => {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.aside
-            className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6"
+            className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-6"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="font-mono text-xs tracking-[0.16em] text-slate-400">CONTACT CHANNELS</h3>
+            <h3 className="font-mono text-xs tracking-[0.16em] text-slate-500 dark:text-slate-400">CONTACT CHANNELS</h3>
 
             <div className="mt-5 space-y-4 text-sm">
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-start gap-3 text-slate-300 transition hover:text-cyan-300"
+                className="flex items-start gap-3 text-slate-700 dark:text-slate-300 transition hover:text-cyan-600 dark:hover:text-cyan-300"
                 whileHover={{ x: 4 }}
               >
-                <Mail className="mt-0.5 h-4 w-4 text-cyan-300" />
+                <Mail className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
                 <span>{personalInfo.email}</span>
               </motion.a>
               <motion.a
                 href={`tel:${personalInfo.phone}`}
-                className="flex items-start gap-3 text-slate-300 transition hover:text-cyan-300"
+                className="flex items-start gap-3 text-slate-700 dark:text-slate-300 transition hover:text-cyan-600 dark:hover:text-cyan-300"
                 whileHover={{ x: 4 }}
               >
-                <Phone className="mt-0.5 h-4 w-4 text-cyan-300" />
+                <Phone className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
                 <span>{personalInfo.phone}</span>
               </motion.a>
-              <p className="flex items-start gap-3 text-slate-300">
-                <MapPin className="mt-0.5 h-4 w-4 text-cyan-300" />
+              <p className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+                <MapPin className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
                 <span>{personalInfo.location}</span>
               </p>
             </div>
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md border border-slate-700 p-2.5 text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-md border border-slate-300 dark:border-slate-700 p-2.5 text-slate-600 dark:text-slate-300 transition hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:text-cyan-600 dark:hover:text-cyan-300"
                 aria-label="LinkedIn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md border border-slate-700 p-2.5 text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-300"
+                className="rounded-md border border-slate-300 dark:border-slate-700 p-2.5 text-slate-600 dark:text-slate-300 transition hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:text-cyan-600 dark:hover:text-cyan-300"
                 aria-label="GitHub"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -104,19 +104,19 @@ const Contact: React.FC = () => {
               </motion.a>
             </div>
 
-            <div className="mt-8 rounded-md border border-slate-800 bg-[#0c1117] p-4 text-sm text-slate-400">
+            <div className="mt-8 rounded-md border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0c1117] p-4 text-sm text-slate-600 dark:text-slate-400">
               Open to full-time AI Engineer, Backend Engineer, and Applied ML Engineer opportunities. {personalInfo.workAuthorization}.
             </div>
           </motion.aside>
 
           <motion.div
-            className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6 sm:p-8"
+            className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-6 sm:p-8"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="font-mono text-xs tracking-[0.16em] text-slate-400">SEND MESSAGE</h3>
+            <h3 className="font-mono text-xs tracking-[0.16em] text-slate-500 dark:text-slate-400">SEND MESSAGE</h3>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="rounded-md border border-slate-700 bg-[#0b1016] px-3 py-2.5 text-sm text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
+                  className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0b1016] px-3 py-2.5 text-sm text-slate-900 dark:text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
                   placeholder="Name"
                 />
                 <input
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="rounded-md border border-slate-700 bg-[#0b1016] px-3 py-2.5 text-sm text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
+                  className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0b1016] px-3 py-2.5 text-sm text-slate-900 dark:text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
                   placeholder="Email"
                 />
               </div>
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-slate-700 bg-[#0b1016] px-3 py-2.5 text-sm text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
+                className="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0b1016] px-3 py-2.5 text-sm text-slate-900 dark:text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
                 placeholder="Subject"
               />
 
@@ -159,13 +159,13 @@ const Contact: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full resize-none rounded-md border border-slate-700 bg-[#0b1016] px-3 py-2.5 text-sm text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
+                className="w-full resize-none rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0b1016] px-3 py-2.5 text-sm text-slate-900 dark:text-slate-100 outline-none ring-cyan-400/30 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring transition"
                 placeholder="Message"
               />
 
               <motion.button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-md border border-cyan-400/50 bg-cyan-400/10 px-4 py-2.5 font-mono text-xs tracking-wide text-cyan-200 transition hover:border-cyan-300 hover:bg-cyan-300/15"
+                className="inline-flex items-center gap-2 rounded-md border border-cyan-500/50 dark:border-cyan-400/50 bg-cyan-500/10 dark:bg-cyan-400/10 px-4 py-2.5 font-mono text-xs tracking-wide text-cyan-700 dark:text-cyan-200 transition hover:border-cyan-500 dark:hover:border-cyan-300 hover:bg-cyan-500/15 dark:hover:bg-cyan-300/15"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >

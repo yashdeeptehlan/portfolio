@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
     <section id="skills" ref={sectionRef} className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.p
-          className="font-mono text-xs tracking-[0.18em] text-cyan-300"
+          className="font-mono text-xs tracking-[0.18em] text-cyan-600 dark:text-cyan-300"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -37,7 +37,7 @@ const Skills: React.FC = () => {
           02 / SKILLS
         </motion.p>
         <motion.h2
-          className="mt-3 text-3xl font-semibold text-slate-100 sm:text-4xl"
+          className="mt-3 text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
@@ -62,8 +62,8 @@ const Skills: React.FC = () => {
                   onClick={() => setActiveCategory(category)}
                   className={`flex items-center gap-3 rounded-md border px-4 py-3 text-left transition ${
                     activeCategory === category
-                      ? 'border-cyan-400/40 bg-cyan-400/10 text-cyan-200'
-                      : 'border-slate-800 bg-[#0e131a]/75 text-slate-300 hover:border-slate-700'
+                      ? 'border-cyan-500/40 dark:border-cyan-400/40 bg-cyan-500/10 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-200'
+                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                   whileHover={{ x: activeCategory === category ? 0 : 4 }}
                   whileTap={{ scale: 0.98 }}
@@ -76,7 +76,7 @@ const Skills: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="rounded-xl border border-slate-800 bg-[#0e131a]/75 p-6 sm:p-8"
+            className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-6 sm:p-8"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
@@ -84,9 +84,9 @@ const Skills: React.FC = () => {
           >
             <div className="mb-6 flex items-center gap-3">
               {React.createElement(categoryIcons[activeCategory as keyof typeof categoryIcons], {
-                className: 'h-5 w-5 text-cyan-300'
+                className: 'h-5 w-5 text-cyan-600 dark:text-cyan-300'
               })}
-              <h3 className="font-mono text-sm tracking-wide text-slate-200">{activeCategory}</h3>
+              <h3 className="font-mono text-sm tracking-wide text-slate-800 dark:text-slate-200">{activeCategory}</h3>
             </div>
 
             <AnimatePresence mode="wait">
@@ -101,10 +101,10 @@ const Skills: React.FC = () => {
                 {currentSkills.map((skill, i) => (
                   <div key={skill.name}>
                     <div className="mb-2 flex items-center justify-between text-sm">
-                      <span className="text-slate-300">{skill.name}</span>
-                      <span className="font-mono text-xs text-cyan-300">{skill.level}%</span>
+                      <span className="text-slate-700 dark:text-slate-300">{skill.name}</span>
+                      <span className="font-mono text-xs text-cyan-600 dark:text-cyan-300">{skill.level}%</span>
                     </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
                       <motion.div
                         className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"
                         initial={{ width: 0 }}
