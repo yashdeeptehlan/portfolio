@@ -42,17 +42,23 @@ function MagneticButton({ children, onClick, className }: { children: React.Reac
   );
 }
 
+const HERO_TYPEWRITER_TEXTS = [
+  'AI / Backend Engineer',
+  'LLM & RAG Systems',
+  'FastAPI & SQL Optimization',
+  'Production AI Deployment',
+] as const;
+
 const Hero: React.FC = () => {
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const texts = ['AI / Backend Engineer', 'LLM & RAG Systems', 'FastAPI & SQL Optimization', 'Production AI Deployment'];
-
   useEffect(() => {
     const typeSpeed = isDeleting ? 45 : 90;
     const pauseTime = isDeleting ? 500 : 1800;
+    const texts = HERO_TYPEWRITER_TEXTS;
 
     const timer = setTimeout(() => {
       if (!isDeleting && charIndex < texts[textIndex].length) {
@@ -70,7 +76,7 @@ const Hero: React.FC = () => {
     }, typeSpeed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, textIndex, texts]);
+  }, [charIndex, isDeleting, textIndex]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

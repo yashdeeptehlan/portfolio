@@ -175,14 +175,7 @@ export function CinematicHero({
   tagline1 = "Build systems that",
   tagline2 = "think and scale.",
   cardHeading = "Backend precision. AI intelligence.",
-  cardDescription = (
-    <>
-      <span className="text-white font-semibold">Yashdeep Tehlan</span> builds
-      production-grade LLM applications, RAG pipelines, and high-performance
-      FastAPI backends — turning applied AI research into deployed, measurable
-      systems.
-    </>
-  ),
+  cardDescription,
   metricValue = 95,
   metricLabel = "Python",
   ctaHeading = "Let's build together.",
@@ -193,6 +186,14 @@ export function CinematicHero({
   className,
   ...props
 }: CinematicHeroProps) {
+  const defaultCardDescription = (
+    <>
+      <span className="text-white font-semibold">{name}</span> builds production-grade LLM applications,
+      RAG pipelines, and high-performance FastAPI backends — turning applied AI research into deployed,
+      measurable systems.
+    </>
+  );
+  const resolvedCardDescription = cardDescription ?? defaultCardDescription;
   const containerRef = useRef<HTMLDivElement>(null);
   const mainCardRef = useRef<HTMLDivElement>(null);
   const mockupRef = useRef<HTMLDivElement>(null);
@@ -538,7 +539,7 @@ export function CinematicHero({
                 {cardHeading}
               </h3>
               <p className="hidden md:block text-blue-100/50 text-sm lg:text-base font-normal leading-relaxed max-w-sm lg:max-w-none">
-                {cardDescription}
+                {resolvedCardDescription}
               </p>
             </div>
 

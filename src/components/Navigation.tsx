@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from 'next-themes';
 import { Menu, Moon, Sun, X, Github, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { personalInfo } from '../data/portfolio';
@@ -7,11 +8,12 @@ interface NavigationProps {
   activeSection: string;
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
-  isDark: boolean;
-  toggleTheme: () => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ activeSection, isMenuOpen, setIsMenuOpen, isDark, toggleTheme }) => {
+const Navigation: React.FC<NavigationProps> = ({ activeSection, isMenuOpen, setIsMenuOpen }) => {
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme !== 'light';
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
   const navItems = [
     { id: 'hero', label: 'Home', index: '00' },
     { id: 'about', label: 'About', index: '01' },
