@@ -8,7 +8,6 @@ export const personalInfo = {
   description:
     'Proven hands-on background in Python, SQL, FastAPI, PostgreSQL, and DuckDB with applied research experience in SQL optimization systems and real-world AI product deployments. Focused on scalable architecture, API design, and practical AI integration for business outcomes.',
   email: 'tehlanyashdeep@gmail.com',
-  phone: '+1 (437) 566 3594',
   linkedin: 'https://linkedin.com/in/yashdeeptehlan',
   address: 'Toronto, Ontario, Canada',
   github: 'https://github.com/yashdeeptehlan',

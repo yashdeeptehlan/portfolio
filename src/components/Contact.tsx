@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Send } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { personalInfo } from '../data/portfolio';
 
@@ -65,15 +65,7 @@ const Contact: React.FC = () => {
                 <Mail className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
                 <span>{personalInfo.email}</span>
               </motion.a>
-              <motion.a
-                href={`tel:${personalInfo.phone}`}
-                className="flex items-start gap-3 text-slate-700 dark:text-slate-300 transition hover:text-cyan-600 dark:hover:text-cyan-300"
-                whileHover={{ x: 4 }}
-              >
-                <Phone className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
-                <span>{personalInfo.phone}</span>
-              </motion.a>
-              <p className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+<p className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
                 <MapPin className="mt-0.5 h-4 w-4 text-cyan-600 dark:text-cyan-300" />
                 <span>{personalInfo.location}</span>
               </p>
