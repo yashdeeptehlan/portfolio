@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from './components/Navigation';
-import { CinematicHero } from './components/ui/cinematic-landing-hero';
+import { RainingLettersHero } from './components/ui/raining-letters-hero';
 import { DottedSurface } from '@/components/ui/dotted-surface';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -31,7 +31,7 @@ function App() {
         />
 
         <main>
-          <CinematicHero id="hero" />
+          <RainingLettersHero id="hero" />
           <About />
           <Skills />
           <Education />
