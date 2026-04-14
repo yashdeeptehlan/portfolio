@@ -93,6 +93,8 @@ export const projects = [
     id: 1,
     title: 'Schemon - AI SQL Optimization System',
     date: '2025',
+    inProduction: true,
+    productionNote: 'Deployed for research workflows at Cambrian College Applied Research',
     description:
       'AI-assisted SQL optimization system leveraging LLMs, DuckDB, and PostgreSQL to improve query quality and execution efficiency.',
     technologies: ['Python', 'FastAPI', 'LLMs', 'DuckDB', 'PostgreSQL'],
@@ -108,6 +110,8 @@ export const projects = [
     id: 2,
     title: 'Noun - AI Manufacturer Matching Platform',
     date: '2025',
+    inProduction: true,
+    productionNote: 'Live backend powering manufacturer discovery for real users',
     description:
       'Semantic search and ranking platform for manufacturer discovery using embeddings and backend recommendation workflows.',
     technologies: ['Python', 'Embeddings', 'RAG', 'FastAPI', 'PostgreSQL'],
@@ -123,6 +127,8 @@ export const projects = [
     id: 3,
     title: 'AI Interview Assistant',
     date: '2025 - Jan 2026',
+    inProduction: true,
+    productionNote: 'Shipped to production — actively used by interviewers & candidates',
     description:
       'Production AI interview platform with automated question generation, response analysis, and structured feedback delivery.',
     technologies: ['FastAPI', 'LLM APIs', 'Prompt Engineering', 'Vercel', 'PDF Export'],

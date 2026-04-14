@@ -4,13 +4,37 @@ import { motion, AnimatePresence, useInView } from 'motion/react';
 import { projects } from '../data/portfolio';
 import { useCardTilt } from '../hooks/useCardTilt';
 
+function ProductionBadge({ note }: { note: string }) {
+  return (
+    <div className="group relative inline-flex items-center gap-1.5">
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+      </span>
+      <span className="font-mono text-[10px] font-semibold tracking-[0.18em] text-emerald-400 uppercase">
+        In Production
+      </span>
+      {/* Tooltip */}
+      <div className="pointer-events-none absolute left-0 top-6 z-20 w-max max-w-[240px] rounded-md border border-emerald-500/20 bg-slate-900 px-2.5 py-1.5 opacity-0 shadow-xl transition-opacity duration-150 group-hover:opacity-100">
+        <p className="text-[10px] leading-snug text-emerald-300/80">{note}</p>
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({ project, index }: { project: (typeof import('../data/portfolio').projects)[number]; index: number }) {
   const { ref, onMouseMove, onMouseLeave } = useCardTilt();
+  const isProd = project.inProduction;
+
   return (
     <motion.article
       ref={ref as React.RefObject<HTMLElement>}
       layout
-      className="holo-card rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75 p-6"
+      className={`holo-card rounded-xl border p-6 transition-shadow ${
+        isProd
+          ? 'border-emerald-500/25 dark:border-emerald-500/20 bg-white dark:bg-[#0b1510]/80 shadow-[0_0_0_1px_rgba(52,211,153,0.05),0_8px_32px_-8px_rgba(52,211,153,0.10)]'
+          : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e131a]/75'
+      }`}
       data-hover
       initial={{ opacity: 0, y: 30, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -19,24 +43,32 @@ function ProjectCard({ project, index }: { project: (typeof import('../data/port
       onMouseMove={onMouseMove as unknown as React.MouseEventHandler<HTMLElement>}
       onMouseLeave={onMouseLeave}
     >
+      {/* Top row: category + production badge on left, date on right */}
       <div className="flex items-start justify-between gap-3">
-        <div>
+        <div className="flex flex-col gap-1.5">
           <p className="font-mono text-xs tracking-wide text-cyan-600 dark:text-cyan-300">{project.category}</p>
-          <h3 className="mt-2 text-xl font-medium text-slate-900 dark:text-slate-100">{project.title}</h3>
+          {isProd && <ProductionBadge note={project.productionNote ?? ''} />}
         </div>
-        <p className="inline-flex items-center gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
+        <p className="inline-flex shrink-0 items-center gap-1.5 font-mono text-xs text-slate-500 dark:text-slate-400">
           <Calendar className="h-3.5 w-3.5" />
           {project.date}
         </p>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{project.description}</p>
+
+      <h3 className="mt-3 text-xl font-medium text-slate-900 dark:text-slate-100">{project.title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{project.description}</p>
+
       <div className="mt-4 flex flex-wrap gap-2">
         {project.technologies.map((tech) => (
-          <span key={tech} className="rounded border border-slate-300 dark:border-slate-700 px-2 py-1 font-mono text-[11px] text-slate-600 dark:text-slate-300">
+          <span
+            key={tech}
+            className="rounded border border-slate-300 dark:border-slate-700 px-2 py-1 font-mono text-[11px] text-slate-600 dark:text-slate-300"
+          >
             {tech}
           </span>
         ))}
       </div>
+
       <ul className="mt-5 space-y-2">
         {project.features.map((feature, idx) => (
           <li key={idx} className="text-sm text-slate-600 dark:text-slate-400">
@@ -45,6 +77,7 @@ function ProjectCard({ project, index }: { project: (typeof import('../data/port
           </li>
         ))}
       </ul>
+
       {project.liveUrl && (
         <a
           href={project.liveUrl}
@@ -74,6 +107,8 @@ const Projects: React.FC = () => {
   const filteredProjects =
     selectedCategory === 'All' ? projects : projects.filter((p) => p.category === selectedCategory);
 
+  const prodCount = projects.filter((p) => p.inProduction).length;
+
   return (
     <section id="projects" ref={sectionRef} className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -86,15 +121,35 @@ const Projects: React.FC = () => {
         >
           04 / PROJECTS
         </motion.p>
-        <motion.h2
-          className="mt-3 text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={fadeUp}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Selected work.
-        </motion.h2>
+
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+          <motion.h2
+            className="text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeUp}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Selected work.
+          </motion.h2>
+
+          {/* Production stat pill */}
+          <motion.div
+            className="flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3 py-1.5"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeUp}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400">
+              {prodCount}/{projects.length} shipped to production
+            </span>
+          </motion.div>
+        </div>
 
         <motion.div
           className="mt-8 flex flex-wrap gap-2"
