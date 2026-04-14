@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { Calendar, ExternalLink, Github } from 'lucide-react';
 import { motion, AnimatePresence, useInView } from 'motion/react';
 import { projects } from '../data/portfolio';
 import { useCardTilt } from '../hooks/useCardTilt';
@@ -78,17 +78,30 @@ function ProjectCard({ project, index }: { project: (typeof import('../data/port
         ))}
       </ul>
 
-      {project.liveUrl && (
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hover
-          className="mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-wide text-cyan-600 dark:text-cyan-300 transition hover:text-cyan-700 dark:hover:text-cyan-200"
-        >
-          LIVE DEMO <ExternalLink className="h-3.5 w-3.5" />
-        </a>
-      )}
+      <div className="mt-6 flex items-center gap-4">
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-hover
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-wide text-cyan-600 dark:text-cyan-300 transition hover:text-cyan-700 dark:hover:text-cyan-200"
+          >
+            LIVE DEMO <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        )}
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-hover
+            className="inline-flex items-center gap-2 font-mono text-xs tracking-wide text-slate-500 dark:text-slate-400 transition hover:text-slate-700 dark:hover:text-slate-200"
+          >
+            <Github className="h-3.5 w-3.5" /> SOURCE
+          </a>
+        )}
+      </div>
     </motion.article>
   );
 }

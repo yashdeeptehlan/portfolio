@@ -91,10 +91,98 @@ export const education = [
 export const projects = [
   {
     id: 1,
-    title: 'Schemon - AI SQL Optimization System',
+    title: 'PromptForge',
     date: '2025',
     inProduction: true,
-    productionNote: 'Deployed for research workflows at Cambrian College Applied Research',
+    productionNote: 'Live CLI tool — actively used to score and optimize LLM prompts before they hit production APIs',
+    githubUrl: 'https://github.com/yashdeeptehlan/promptforge',
+    description:
+      'CLI-based prompt optimization engine that intercepts, scores, and rewrites prompts before they reach LLM APIs — cutting inference costs and improving output quality.',
+    technologies: ['Python', 'MCP', 'Claude API', 'FastAPI', 'PostgreSQL'],
+    features: [
+      'Scores prompts on quality heuristics and rewrites weak ones automatically.',
+      'MCP integration lets it sit transparently in any LLM workflow.',
+      'Stack memory tracks per-language prompt performance over time.',
+      'Reduced average inference cost by eliminating low-signal prompts.'
+    ],
+    category: 'AI/ML'
+  },
+  {
+    id: 2,
+    title: 'Polymarket Trading Bot',
+    date: '2025',
+    inProduction: true,
+    productionNote: 'Running live on Polymarket — 68.4% win rate across real-money prediction markets',
+    githubUrl: 'https://github.com/yashdeeptehlan/polymarket-bot',
+    description:
+      'Automated prediction market trading bot with signal detection, position sizing, and P&L tracking — deployed live on Polymarket with a 68.4% win rate.',
+    technologies: ['Python', 'FastAPI', 'React', 'Polymarket API', 'PostgreSQL'],
+    features: [
+      '68.4% win rate with 1.84× profit factor across live trades.',
+      'High-confidence signal engine ranks upcoming markets by edge.',
+      'Real-time dashboard tracks P&L, open positions, and win streaks.',
+      'Automated position sizing based on confidence score and bankroll.'
+    ],
+    category: 'Backend'
+  },
+  {
+    id: 3,
+    title: 'AI-Interviewer',
+    date: '2025 - Jan 2026',
+    inProduction: true,
+    productionNote: 'Shipped and live — used by interviewers and candidates for real hiring sessions',
+    githubUrl: 'https://github.com/yashdeeptehlan/Ai-interview',
+    description:
+      'Full-stack AI interview platform with voice recording, real-time transcription, LLM-powered scoring, and PDF report export.',
+    technologies: ['Next.js', 'OpenAI', 'ElevenLabs', 'FastAPI', 'Vercel'],
+    features: [
+      'Voice-to-text pipeline using ElevenLabs with live waveform feedback.',
+      'LLM evaluates communication, technical depth, and leadership signal.',
+      'Multi-question session manager with progress tracking.',
+      'Automated PDF report generation with per-dimension scoring.'
+    ],
+    category: 'AI/ML'
+  },
+  {
+    id: 4,
+    title: 'Hitch — Ride Sharing',
+    date: '2025',
+    inProduction: true,
+    productionNote: 'Live app — connects drivers and passengers for intercity rides across Canada',
+    githubUrl: 'https://github.com/yashdeeptehlan/hitch',
+    description:
+      'Peer-to-peer ride-sharing platform for intercity travel — drivers post trips, passengers book seats, built on Supabase with real-time availability.',
+    technologies: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    features: [
+      'Real-time ride listings with seat availability and departure times.',
+      'Driver profiles with ratings and vehicle details.',
+      'Booking flow with passenger count selection and confirmation.',
+      'Supabase backend handles auth, real-time data, and storage.'
+    ],
+    category: 'Full-Stack'
+  },
+  {
+    id: 5,
+    title: 'VaultX — Crypto Exchange',
+    date: '2025',
+    inProduction: true,
+    productionNote: 'Live marketplace — escrow-protected crypto trades with KYC and trust scoring',
+    githubUrl: 'https://github.com/yashdeeptehlan/vault-exchange',
+    description:
+      'Peer-to-peer crypto asset marketplace with escrow protection, KYC verification, and a trust scoring system to safeguard every transaction.',
+    technologies: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    features: [
+      'Escrow-protected trades lock funds until both parties confirm.',
+      'KYC identity verification and trust score per user.',
+      'Risk scoring flags suspicious listings before funds move.',
+      'Real-time active escrow balance and marketplace feed.'
+    ],
+    category: 'Full-Stack'
+  },
+  {
+    id: 6,
+    title: 'Schemon — AI SQL Optimization',
+    date: '2025',
     description:
       'AI-assisted SQL optimization system leveraging LLMs, DuckDB, and PostgreSQL to improve query quality and execution efficiency.',
     technologies: ['Python', 'FastAPI', 'LLMs', 'DuckDB', 'PostgreSQL'],
@@ -107,11 +195,9 @@ export const projects = [
     category: 'AI/ML'
   },
   {
-    id: 2,
-    title: 'Noun - AI Manufacturer Matching Platform',
+    id: 7,
+    title: 'Noun — AI Manufacturer Matching',
     date: '2025',
-    inProduction: true,
-    productionNote: 'Live backend powering manufacturer discovery for real users',
     description:
       'Semantic search and ranking platform for manufacturer discovery using embeddings and backend recommendation workflows.',
     technologies: ['Python', 'Embeddings', 'RAG', 'FastAPI', 'PostgreSQL'],
@@ -124,11 +210,9 @@ export const projects = [
     category: 'AI/ML'
   },
   {
-    id: 3,
+    id: 8,
     title: 'AI Interview Assistant',
     date: '2025 - Jan 2026',
-    inProduction: true,
-    productionNote: 'Shipped to production — actively used by interviewers & candidates',
     description:
       'Production AI interview platform with automated question generation, response analysis, and structured feedback delivery.',
     technologies: ['FastAPI', 'LLM APIs', 'Prompt Engineering', 'Vercel', 'PDF Export'],
